@@ -31,6 +31,58 @@ namespace Song {
         int GetPlayCount() const {
             return Listens;
         }
+
+
+       // Getters y Setters
+        int getId() const {
+            return id;
+        }
+
+        std::string getName() const {
+            return name;
+        }
+
+        void setName(const std::string& newName) {
+            name = newName;
+        }
+
+        std::string getArtist() const {
+            return artist;
+        }
+
+        void setArtist(const std::string& newArtist) {
+            artist = newArtist;
+        }
+
+        std::string getAlbum() const {
+            return album;
+        }
+
+        void setAlbum(const std::string& newAlbum) {
+            album = newAlbum;
+        }
+
+        std::string getGenre() const {
+            return genre;
+        }
+
+        void setGenre(const std::string& newGenre) {
+            genre = newGenre;
+        }
+
+        int getListens() const {
+            return Listens;
+        }
+
+        void setListens(int newListenCount) {
+            Listens = newListenCount;
+        }
+
+        void setId(int newId) {
+            id = newId;
+        }
+
+
     };
 
     int Song::nextId = 1;
