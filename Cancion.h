@@ -14,10 +14,28 @@ private:
 
 public:
     // Constructor
-    Cancion(int id, const std::string& titulo, const std::string& artista,
+   Cancion(int id, const std::string& titulo, const std::string& artista,
             const std::string& album, const std::string& genero, int cantidadEscuchada)
         : ID(id), titulo(titulo), artista(artista), album(album),
           genero(genero), cantidadEscuchada(cantidadEscuchada) {}
+    
+    // Posiblemente también quieras un constructor por defecto
+    Cancion() : ID(0), titulo(""), artista(""), album(""), genero(""), cantidadEscuchada(0) {}
+
+
+
+
+        bool operator<(const Cancion& other) const {
+        return this->titulo < other.titulo; // Comparar por título, por ejemplo
+    }
+
+    bool operator>(const Cancion& other) const {
+        return this->titulo > other.titulo; // Comparar por título
+    }
+
+    bool operator==(const Cancion& other) const {
+        return this->ID == other.ID; // Comparar por ID, por ejemplo
+    }
 
     // Getters y setters para cada campo
     int getID() const { return ID; }
