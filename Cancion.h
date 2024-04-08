@@ -24,6 +24,11 @@ public:
 
 
 
+        friend std::ostream& operator<<(std::ostream& os, const Cancion& cancion) {
+        os << cancion.titulo << " - " << cancion.artista;  // Modifica según la estructura de Cancion
+        return os;
+    }
+
 
         bool operator<(const Cancion& other) const {
         return this->titulo < other.titulo; // Comparar por título, por ejemplo

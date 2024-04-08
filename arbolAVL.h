@@ -8,19 +8,23 @@ class ArbolAVL {
 private:
     NodoAVL<T>* raiz;
 
-    NodoAVL<T>* insertarRecursivo(NodoAVL<T>* nodo, const T& val);
-    void actualizarAltura(NodoAVL<T>* nodo);
-    NodoAVL<T>* balancear(NodoAVL<T>* nodo);
-    NodoAVL<T>* rotarDerecha(NodoAVL<T>* nodo);
-    NodoAVL<T>* rotarIzquierda(NodoAVL<T>* nodo);
-    int getBalance(NodoAVL<T>* nodo);
-    void destruirNodos(NodoAVL<T>* nodo);
-
 public:
     ArbolAVL();
      ~ArbolAVL();
-    void insertar(const T& val);
-    
+     bool esVacio();
+    int altura();
+    int altura(NodoAVL<T>* nodo);
+    bool insert(T& val);
+    bool insertar(T& val);
+    bool buscar(T& val);
+    bool erase(T& val);
+    bool eliminar(T& val);
+    void preOrden(const std::string& archivo);
+    NodoAVL<T>* esBalanceado();
+    void rotacionIzquierda(T val);
+    void rotacionDerecha(T val);
+    int factorEquilibrio();
+    int factorEquilibrio(NodoAVL<T>* nodo);
 };
 
 #include "ArbolAVL.hxx"

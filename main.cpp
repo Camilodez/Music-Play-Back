@@ -20,7 +20,8 @@ void mostrarMenu() {
     std::cout << "4. Buscar por Artista\n";
     std::cout << "5. Buscar por Álbum\n";
     std::cout << "6. Buscar por Género\n";
-     std::cout << "7. Inicializar Arbol\n";
+    std::cout << "7. Inicializar Arbol\n";
+    std::cout << "8. Guardar Arbol\n";
     std::cout << "0. Salir\n";
     std::cout << "Seleccione una opción: ";
 }
@@ -96,17 +97,21 @@ int main(int argc, char *argv[]) {
                 Cancion cancion(id, titulo, artista, album, genero, cantidadEscuchada);
 
                 // Insertar la canción en los árboles AVL
-                PorTitulo.insertar(cancion);
-                PorArtista.insertar(cancion);
-                PorAlbum.insertar(cancion);
-                PorGenero.insertar(cancion);
-    }
-
-    file.close();
-             
-
+                PorTitulo.insert(cancion);
+               // PorArtista.insertar(cancion);
+                //PorAlbum.insertar(cancion);
+                //PorGenero.insertar(cancion);
+                }
+                file.close();
                 
                 break;
+            case 8:
+                PorTitulo.preOrden("Arboles.txt");
+                //PorArtista.preOrden("Arboles.txt");
+                //PorAlbum.preOrden("Arboles.txt");
+                //PorGenero.preOrden("Arboles.txt");
+                break;
+
             case 0:
                 std::cout << "Saliendo del programa.\n";
                 break;

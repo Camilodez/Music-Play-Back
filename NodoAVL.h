@@ -3,6 +3,7 @@
 
 #include "Cancion.h"
 #include <list>
+#include <fstream>
 
 template < class T >
 class NodoAVL {
@@ -12,6 +13,8 @@ class NodoAVL {
         NodoAVL<T>* hijoIzq;
         NodoAVL<T>* hijoDer;
         int altura;
+
+        
     public:
         NodoAVL();
         NodoAVL(T val);
@@ -24,13 +27,13 @@ class NodoAVL {
         void SetHijoDer(NodoAVL<T> *der);
         bool esHoja();
         std::list<Cancion> GetCanciones();
-        int getAltura() const {
-        return altura;
-    }
 
-    void setAltura(int nuevaAltura) {
-        altura = nuevaAltura;
-    }
+        void preOrden(std::ofstream& outfile);
+
+        bool insertar(T& val, NodoAVL<T> **nraiz);
+
+
+    
 };
 
 #include "nodoAVL.hxx"
